@@ -3,7 +3,7 @@ package com.codedifferentlty.labs.partD;
 import java.util.HashMap;
 import java.util.Map;
 
-public class POI implements Comparable<POI> {
+public class POI {
 
     private String name;
 
@@ -22,11 +22,6 @@ public class POI implements Comparable<POI> {
     public String getAddress() { return address; }
 
     public String getDescription() { return description; }
-
-    @Override
-    public int compareTo(POI other) {
-        return 0;
-    }
 
     @Override
     public String toString() {

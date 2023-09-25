@@ -1,8 +1,13 @@
 package com.codedifferentlty.labs.partC;
 
+import com.codedifferentlty.labs.partD.CityGuide;
+import com.codedifferentlty.labs.partD.POI;
+
 import java.util.Scanner;
 
 public class TerminalApp {
+
+    CityGuide cityGuide = new CityGuide();
 
     private void printMenu() {
         System.out.println("\nWelcome to City Guide - Points of Interest (POI) Finder!");
@@ -13,11 +18,22 @@ public class TerminalApp {
         System.out.println("4. List all POI");
         System.out.println("5. Delete a POI");
         System.out.println("0. Exit");
+        System.out.println();
     }
 
     private void option1() {
-        System.out.println("You selected Option 1.");
-        // Add relevant code for Option 1 functionality
+        System.out.println("Add a new POI:");
+        System.out.println("---------------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter POI Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter POI Address: ");
+        String address = scanner.nextLine();
+        System.out.print("Enter POI description: ");
+        String description = scanner.nextLine();
+        POI poi = new POI(name, address, description);
+        cityGuide.addToAreas(poi, null);
+        System.out.println("POI " + name + " added successfully!");
     }
 
     private void option2() {
@@ -31,8 +47,9 @@ public class TerminalApp {
     }
 
     private void option4() {
-        System.out.println("You selected Option 4.");
-        // Add relevant code for Option 3 functionality
+        System.out.println("List All POIs:");
+        System.out.println("---------------");
+        cityGuide.displayPOIs(cityGuide.getAreas());
     }
 
     private void option5() {

@@ -22,6 +22,11 @@ public class CityGuide {
         areas.put(poi, rate);
     }
 
-
-
+    public void displayPOIs(Map<POI, Integer> POIList) {
+        // Iterate through each item in the inventory map
+        for (Map.Entry<POI, Integer> entry : POIList.entrySet()) {
+            // Print the product name (key) and its quantity (value)
+            System.out.println(entry.toString() + "(Rating " + entry.getValue() + "/5)");
+        }
+    }
 }
