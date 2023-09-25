@@ -9,7 +9,7 @@ import java.util.Map;
 public class InventoryCounter {
 
     // Declare a private instance variable 'inventory' of type Map
-    private Map<String, Integer> inventory = new HashMap<>();
+    private Map<String, Integer> inventory;
 
     public InventoryCounter(){
         // instantiate inventory with a new empty HashMap
