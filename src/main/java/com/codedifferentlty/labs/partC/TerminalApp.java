@@ -5,12 +5,14 @@ import java.util.Scanner;
 public class TerminalApp {
 
     private void printMenu() {
-        System.out.println("\n---- Terminal App Menu ----");
-        System.out.println("1. Option 1");
-        System.out.println("2. Option 2");
-        System.out.println("3. Option 3");
+        System.out.println("\nWelcome to City Guide - Points of Interest (POI) Finder!");
+        System.out.println("========================================================");
+        System.out.println("1. Add a new POI");
+        System.out.println("2. Search for a POI by name");
+        System.out.println("3. Rate a POI");
+        System.out.println("4. List all POI");
+        System.out.println("5. Delete a POI");
         System.out.println("0. Exit");
-        System.out.println("----------------------------");
     }
 
     private void option1() {
@@ -27,6 +29,17 @@ public class TerminalApp {
         System.out.println("You selected Option 3.");
         // Add relevant code for Option 3 functionality
     }
+
+    private void option4() {
+        System.out.println("You selected Option 4.");
+        // Add relevant code for Option 3 functionality
+    }
+
+    private void option5() {
+        System.out.println("You selected Option 5.");
+        // Add relevant code for Option 3 functionality
+    }
+
 
     public void start(){
         Scanner scanner = new Scanner(System.in);
@@ -47,6 +60,12 @@ public class TerminalApp {
                     break;
                 case 3:
                     option3();
+                    break;
+                case 4:
+                    option4();
+                    break;
+                case 5:
+                    option5();
                     break;
                 case 0:
                     System.out.println("Exiting the application. Goodbye!");
