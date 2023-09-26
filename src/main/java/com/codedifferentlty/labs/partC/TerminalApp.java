@@ -22,7 +22,7 @@ public class TerminalApp {
     }
 
     private void option1() {
-        System.out.println("Add a new POI:");
+        System.out.println("\nAdd a new POI:");
         System.out.println("---------------");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter POI Name: ");
@@ -32,29 +32,45 @@ public class TerminalApp {
         System.out.print("Enter POI description: ");
         String description = scanner.nextLine();
         POI poi = new POI(name, address, description);
-        cityGuide.addToAreas(poi, null);
-        System.out.println("POI " + name + " added successfully!");
+        cityGuide.addToPOI(poi, null);
+        System.out.println("\nPOI " + name + " added successfully!");
     }
 
     private void option2() {
-        System.out.println("You selected Option 2.");
-        // Add relevant code for Option 2 functionality
+        System.out.println("\nSearch for a POI by name:");
+        System.out.println("--------------------------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the POI Name: ");
+        String name = scanner.nextLine();
+        cityGuide.searchByName(name);
     }
 
     private void option3() {
-        System.out.println("You selected Option 3.");
-        // Add relevant code for Option 3 functionality
+        System.out.println("\nRate a POI:");
+        System.out.println("-----------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the POI Name to rate: ");
+        String name = scanner.nextLine();
+        System.out.print("Rate the POI (1-5): ");
+        Double rate = scanner.nextDouble();
+        cityGuide.addRate(name, rate);
+        System.out.println();
     }
 
     private void option4() {
-        System.out.println("List All POIs:");
+        System.out.println("\nList All POIs:");
         System.out.println("---------------");
         cityGuide.displayPOIs(cityGuide.getAreas());
     }
 
     private void option5() {
-        System.out.println("You selected Option 5.");
-        // Add relevant code for Option 3 functionality
+        System.out.println("\nDelete a POI:");
+        System.out.println("--------------");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the POI Name: ");
+        String name = scanner.nextLine();
+        cityGuide.removeFromAreas(name);
+        System.out.println("\nPOI " + name + " successfully deleted!");
     }
 
 
