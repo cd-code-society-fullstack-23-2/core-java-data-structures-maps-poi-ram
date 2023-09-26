@@ -1,27 +1,33 @@
 package com.codedifferentlty.labs.partD;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CityGuide {
 
 
-    private Map<POI, Integer> areas;
+    private Map<POI, ArrayList<Integer>> areas;
     public CityGuide(){
         areas = new HashMap<>();
     }
 
-    public Map<POI, Integer> getAreas() {
-        // Return the current inventory map
+    public Map<POI, ArrayList<Integer>> getAreas() {
         return areas;
     }
-    public void addToAreas(POI poi, Integer rate) {
-        // Get the current quantity of the specified product, defaulting to 0 if it doesn't exist in the inventory
-        int currentRating = areas.getOrDefault(poi, 0);
-        // Update the inventory by adding the specified amount to the product's current quantity
-        areas.put(poi, rate);
-    }
 
+    public void addToAreas(POI poi, Integer rate) {
+        ArrayList<Integer> ratings;
+        ratings = (areas.containsKey(poi))? areas.get(poi): new ArrayList<>();
+        ratings.add(rate);
+        areas.put(poi, ratings);
+    }
+    public void removeFromAreas(POI poi, Integer rate) {
+        areas.remove(poi);
+    }
+    public void removePOI(){
+
+    }
 
 
 }
