@@ -32,7 +32,7 @@ public class TerminalApp {
         System.out.print("Enter POI description: ");
         String description = scanner.nextLine();
         POI poi = new POI(name, address, description);
-        cityGuide.addToPOI(poi, null);
+        cityGuide.addToPOI(poi);
         System.out.println("\nPOI " + name + " added successfully!");
     }
 
@@ -53,8 +53,15 @@ public class TerminalApp {
         String name = scanner.nextLine();
         System.out.print("Rate the POI (1-5): ");
         Double rate = scanner.nextDouble();
+
+        while(rate < 1 || rate > 5){
+            System.out.println("\nPlease enter a number between 1 and 5.");
+            System.out.print("Rate the POI (1-5): ");
+            rate = scanner.nextDouble();
+        }
+
         cityGuide.addRate(name, rate);
-        System.out.println();
+        System.out.println("\nThank you! You rated '" + name + "' " + rate + "/5");
     }
 
     private void option4() {
@@ -101,7 +108,7 @@ public class TerminalApp {
                     option5();
                     break;
                 case 0:
-                    System.out.println("Exiting the application. Goodbye!");
+                    System.out.println("Thank you for using City Guide - Points of Interest (POI) Finder! Have a great day!");
                     System.exit(0);
                     break;
                 default:

@@ -16,10 +16,10 @@ public class CityGuideTest {
     }
     @Test
     public void testAddAreas(){
-        cityGuide.addToPOI(poi1, 5);
+        cityGuide.addToPOI(poi1);
 
 
-        assertEquals(5, cityGuide.getAreas().get(poi1));
+        assertEquals(null, cityGuide.getAreas().get(poi1));
 
 
     }

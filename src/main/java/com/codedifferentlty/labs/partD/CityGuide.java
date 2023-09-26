@@ -1,44 +1,39 @@
 package com.codedifferentlty.labs.partD;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CityGuide {
 
 
-    private Map<POI, Double> areas;
+    private Map<POI, Rate> areas;
     public CityGuide(){
         areas = new HashMap<>();
     }
 
-    public Map<POI, Double> getAreas() {
+    public Map<POI, Rate> getAreas() {
         if(areas.isEmpty()){
             System.out.println("List is empty. Please add POIs.");
         }
         return areas;
     }
 
-    public void addToPOI(POI poi, Double rate) {
+    public void addToPOI(POI poi) {
+        Rate rate = new Rate();
         areas.put(poi, rate);
-}
+    }
 
     public void addRate(String name, Double rate) {
         for (POI poi : areas.keySet()) {
             if (poi.getName().equals(name)) {
-                areas.put(poi, rate);
+                Rate newRate = areas.get(poi);
+                newRate.addRating(rate);
+                areas.put(poi, areas.get(poi));
                 return;
             } }
         throw new POINotFoundException("This POI is not found.");
 
     }
-
-
-//        ArrayList<Double> ratings;
-//        ratings = (areas.containsKey(poi))? areas.get(poi): new ArrayList<>();
-//        ratings.add(rate);
-//        areas.put(poi, ratings);
-
 
     public void removeFromAreas(String name) {
         for (POI poi : areas.keySet()) {
@@ -47,9 +42,7 @@ public class CityGuide {
                 return;
             }}
         throw new POINotFoundException("This POI is not found.");
-}
-
-
+    }
 
     public void searchByName(String name) {
         for (POI poi : areas.keySet()) {
@@ -59,16 +52,16 @@ public class CityGuide {
                 System.out.println("Name: " + poi.getName());
                 System.out.println("Address: " + poi.getAddress());
                 System.out.println("Description: " + poi.getDescription());
-                System.out.println("Rating: " + areas.get(poi) + "/5");
+                System.out.println(areas.get(poi).getAverage());
                 return;
             }}
         throw new POINotFoundException("This POI is not found.");
 
     }
 
-    public void displayPOIs(Map<POI, Double> POIList) {
-        for (Map.Entry<POI, Double> entry : POIList.entrySet()) {
-            System.out.println(entry.getKey().toString() + "  (Rating " + entry.getValue() + "/5)");
+    public void displayPOIs(Map<POI, Rate> POIList) {
+        for (Map.Entry<POI, Rate> entry : POIList.entrySet()) {
+            System.out.println(entry.getKey().toString() + " (" + entry.getValue().getAverage() + ")");
         }
     }
 }
