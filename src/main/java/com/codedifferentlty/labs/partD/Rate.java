@@ -3,7 +3,7 @@ package com.codedifferentlty.labs.partD;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rate implements Comparable<Rate>{
+public class Rate {
 
     private List<Double> ratings;
 
@@ -39,10 +39,5 @@ public class Rate implements Comparable<Rate>{
             double average = total/ratings.size();
             return "Rating: " + String.valueOf(average) + "/5 by " + ratings.size() + " users.";
         }
-    }
-
-    @Override
-    public int compareTo(Rate o) {
-        return this.getAverageDouble().compareTo(o.getAverageDouble());
     }
 }

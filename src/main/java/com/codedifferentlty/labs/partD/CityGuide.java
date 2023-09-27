@@ -60,10 +60,13 @@ public class CityGuide{
 
     }
 
-    public void displayPOIs(Map<POI, Rate> POIList) {
+    public String displayPOIs(Map<POI, Rate> POIList) {
+        String message = "";
         for (Map.Entry<POI, Rate> entry : POIList.entrySet()) {
-            System.out.println(entry.getKey().toString() + " (" + entry.getValue().getAverage() + ")");
+            message = entry.getKey().toString() + " (" + entry.getValue().getAverage() + ")";
+            System.out.println(message);
         }
+        return message;
     }
 
 }
