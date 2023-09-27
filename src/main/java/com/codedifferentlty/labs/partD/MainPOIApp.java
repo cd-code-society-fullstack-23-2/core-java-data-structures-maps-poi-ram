@@ -10,11 +10,11 @@ public class MainPOIApp {
         private void printMenu() {
             System.out.println("\nWelcome to City Guide - Points of Interest (POI) Finder!");
             System.out.println("========================================================");
-            System.out.println("1. Add a new POI");
-            System.out.println("2. Search for a POI by name");
-            System.out.println("3. Rate a POI");
-            System.out.println("4. List all POI");
-            System.out.println("5. Delete a POI");
+            System.out.println("1. Add a new POI✅");
+            System.out.println("2. Search for a POI by name🔎");
+            System.out.println("3. Rate a POI⭐️");
+            System.out.println("4. List all POI📝");
+            System.out.println("5. Delete a POI❌");
             System.out.println("0. Exit");
             System.out.println();
         }

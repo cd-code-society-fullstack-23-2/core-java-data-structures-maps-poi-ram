@@ -28,7 +28,7 @@ public class CityGuide{
             if (poi.getName().equals(name)) {
                 Rate newRate = areas.get(poi);
                 newRate.addRating(rate);
-                areas.put(poi, areas.get(poi));
+                areas.put(poi, newRate);
                 return;
             } }
         throw new POINotFoundException("This POI is not found.");
