@@ -56,7 +56,6 @@ public class CityGuide{
                 return;
             }}
         throw new POINotFoundException("This POI is not found.");
-
     }
 
     // Display Points of Interest (POIs) along with their rates.
