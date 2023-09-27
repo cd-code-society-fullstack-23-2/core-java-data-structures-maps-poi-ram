@@ -15,10 +15,6 @@ public class Rate {
         ratings.add(rating);
     }
 
-    public List<Double> getRatings() {
-        return ratings;
-    }
-
     public Double getAverageDouble() {
         double total = 0;
         for (double i : ratings) {

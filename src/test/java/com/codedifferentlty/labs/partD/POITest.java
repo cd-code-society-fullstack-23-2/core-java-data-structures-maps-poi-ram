@@ -36,10 +36,5 @@ public class POITest {
         String actual = local.getDescription();
         //Then
         assertEquals(expected,actual);
-
     }
-
-
-
-
 }
