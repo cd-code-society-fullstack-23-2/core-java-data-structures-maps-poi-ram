@@ -40,22 +40,6 @@ public class POITest {
     }
 
 
-    @Test
-    public void testAddToAreas01() {
-
-        // This unit test is to test how the addToAreas method, the method should add a poi to the areas map, which requires a poi, as the key and a rating as a value
-
-        // Given
-
-        // When
-
-        // Then
-
-
-
-    }
-
-
 
 
 }
