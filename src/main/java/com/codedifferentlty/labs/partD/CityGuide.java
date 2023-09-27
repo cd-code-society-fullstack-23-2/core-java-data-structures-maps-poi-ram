@@ -1,8 +1,7 @@
 package com.codedifferentlty.labs.partD;
 
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CityGuide{
 
@@ -60,11 +59,27 @@ public class CityGuide{
 
     }
 
+    // Display Points of Interest (POIs) along with their rates.
     public String displayPOIs(Map<POI, Rate> POIList) {
-        String message = "";
-        for (Map.Entry<POI, Rate> entry : POIList.entrySet()) {
+        String message = ""; // Initialize an empty message
+        // Creating a list of entries from the areas map, which can then be sorted or iterated
+        List<Map.Entry<POI, Rate>> entryList = new ArrayList<>(areas.entrySet());
+
+        // Sorting the entryList based on the keys of the Map.Entry objects in ascending order
+        Collections.sort(entryList, new Comparator<>() {
+            // Using a custom comparison defined by the Comparator, implemented as an anonymous inner class.
+            // Comparing keys of two entries and using compareTo method in Comparable to sort
+            @Override
+            public int compare(Map.Entry<POI, Rate> o1, Map.Entry<POI, Rate> o2) {
+                return o1.getKey().compareTo(o2.getKey());
+            }
+        });
+
+        // Iterate over the sorted entries and build the message
+        for (Map.Entry<POI, Rate> entry : entryList) {
+            // Build the message with the POI name and its average rate
             message = entry.getKey().toString() + " (" + entry.getValue().getAverage() + ")";
-            System.out.println(message);
+            System.out.println(message);// Print the message to the console
         }
         return message;
     }
