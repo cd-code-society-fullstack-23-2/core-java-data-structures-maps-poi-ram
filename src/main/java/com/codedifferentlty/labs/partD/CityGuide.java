@@ -1,9 +1,10 @@
 package com.codedifferentlty.labs.partD;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class CityGuide {
+public class CityGuide{
 
 
     private Map<POI, Rate> areas;
@@ -64,4 +65,5 @@ public class CityGuide {
             System.out.println(entry.getKey().toString() + " (" + entry.getValue().getAverage() + ")");
         }
     }
+
 }

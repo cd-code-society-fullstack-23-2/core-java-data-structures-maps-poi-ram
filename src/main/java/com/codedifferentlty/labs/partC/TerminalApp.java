@@ -2,8 +2,8 @@ package com.codedifferentlty.labs.partC;
 
 import com.codedifferentlty.labs.partD.CityGuide;
 import com.codedifferentlty.labs.partD.POI;
-
 import java.util.Scanner;
+
 
 public class TerminalApp {
 
